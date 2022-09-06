@@ -1,19 +1,16 @@
-package com.github.murilonerdx.productservice.dto;
+package com.murilonerdx.orderservice.dto;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
 @ToString
-@NoArgsConstructor
-public class ProductDto {
-
+public class ProductDTO {
     private String id;
     private String description;
     private Integer price;
 
-    public ProductDto(String description, Integer price) {
+    public ProductDTO(String description, Integer price) {
         this.description = description;
         this.price = price;
     }
