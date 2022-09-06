@@ -9,13 +9,16 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    private UserService service;
+    private final UserService service;
 
-    @GetMapping("all")
+    public UserController(UserService service) {
+        this.service = service;
+    }
+
+    @GetMapping("/all")
     public Flux<UserDTO> all(){
         return this.service.all();
     }
